@@ -23,13 +23,13 @@ const theme = createTheme({
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-            {/* Contex provider must wrap the app */}
-      <ToDoListProvider>
-      {/* NavigationContainer must wrap the app */}
-      <NavigationContainer>
-        <TabNavigator />
-      </NavigationContainer>
-      </ToDoListProvider>
+          {/* Contex provider must wrap the app */}
+        <ToDoListProvider>
+          {/* NavigationContainer must wrap the app */}
+            <NavigationContainer>
+                    <TabNavigator />
+            </NavigationContainer>
+        </ToDoListProvider>
     </ThemeProvider>
   );
 }

@@ -3,11 +3,11 @@ import React, {createContext, useState } from 'react'
 // created a ToDoListContext to hold the todolist state
 const ToDoListContext = createContext();
 
-// define the provider with children prop for nested component
 
+// define the provider with children prop for nested component
 const ToDoListProvider = ({ children }) => {
     const [ toDoList, setToDoList] = useState([])
-}
+
 
 //add item to the list
 const addToDo = (toDo) => {
@@ -28,6 +28,6 @@ return(
         {children}
     </ToDoListContext.Provider>
 )
-
+}
 
 export { ToDoListProvider, ToDoListContext };
