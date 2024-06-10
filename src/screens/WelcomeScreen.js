@@ -8,10 +8,10 @@ import ToDoListScreen from './ToDoListScreen'
 
 const WelcomeScreen = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
         <ScrollView>
         <View>
-            <Text>Welcome</Text>
+            <Text h2>Hey Fabs</Text>
 
             <AddToDoScreen/>
             <ToDoListScreen/>
@@ -30,5 +30,9 @@ export default WelcomeScreen
 
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        margin: 10
+    }
     
 })

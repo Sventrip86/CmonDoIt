@@ -1,19 +1,23 @@
 import React, { useContext } from 'react';
-import { View, Text, Button, ScrollView } from 'react-native';
+import { View,  Button, ScrollView, StyleSheet } from 'react-native';
 import { ToDoListContext } from '../ToDOListContext'
+import { Text } from '@rneui/base';
 
 
 
 const ToDoListScreen = () => {
     const { toDoList, removeToDo } = useContext(ToDoListContext);
+
+    
   
 
     return(
-            <ScrollView>
+            <ScrollView style={styles.container}>
                 {/* iterate to the list of todos  */}
                 {toDoList.map( toDo => (
                     <View key={ toDo.id } > 
-                    <Text>{toDo.text}</Text>
+                    <Text h4>{toDo.text}</Text>
+                    <Text>PRIORITY: {toDo.priority} CREATED: {toDo.createdAt}</Text>
                     {/* every item can be removed pressing the button  */}
 <Button title='remove' onPress={() => removeToDo(toDo.id)}/>
                     </View>
@@ -24,3 +28,14 @@ const ToDoListScreen = () => {
 }
 
 export default ToDoListScreen
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        margin: 10
+    }, 
+    title: {
+        textAlign: 'center'
+    }
+    
+})
